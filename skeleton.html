@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Hash Tag Area</h2>
+<p>Enter your hashtags here, separated by spaces</p>
+
+<form id="form">
+  <textarea id="textarea" rows="10" cols="30"></textarea>
+  <br>
+  <br>
+  <input type="submit">
+</form>
+
+<div id="hashtags"></div>
+
+<script>
+  const form = document.getElementById('form');
+  form.addEventListener('submit', test);
+  
+  function test(e) {
+    e.preventDefault();
+    console.log(e)
+    const hashtags = document.getElementById('hashtags');
+    const textAreaValue = e.target[0].value;
+
+    let tagsArray = textAreaValue.split(' ');
+    for(let i = 0; i < tagsArray.length; i++) {
+      tagsArray[i] = '#'+tagsArray[i];
+      const hashtag = document.createElement('p'); 
+      hashtag.textContent = tagsArray[i];
+      hashtag.className = "testClass";
+      hashtags.appendChild(hashtag);
+    }
+  }
+</script>
+
+</body>
+</html>
