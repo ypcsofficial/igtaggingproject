@@ -2,7 +2,7 @@
 
 ## TODO LIST
 
-1. Create tag pool
+[] Create tag pool
 
 2. Create tag groups
 
