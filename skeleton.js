@@ -26,3 +26,13 @@ function enterKeySubmit(e) {
     form.dispatchEvent(new Event('submit'));
   }
 }
+
+const textareaElement = document.getElementById('textarea');
+textareaElement.addEventListener('keydown', replaceSpaceWithUnderscore);
+
+function replaceSpaceWithUnderscore(e) {
+  if(e.keyCode === 32) {
+    e.preventDefault();
+    textareaElement.value += '_';
+  }
+}
