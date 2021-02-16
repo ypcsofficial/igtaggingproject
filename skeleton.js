@@ -1,6 +1,9 @@
 const form = document.getElementById('form');
 form.addEventListener('submit', test);
 
+let submitButton = document.getElementById('textarea');
+submitButton.addEventListener('keydown', enterKeySubmit);
+
 function test(e) {
   e.preventDefault();
   console.log(e)
@@ -14,5 +17,12 @@ function test(e) {
     hashtag.textContent = tagsArray[i];
     hashtag.className = "testClass";
     hashtags.appendChild(hashtag);
+  }
+}
+
+function enterKeySubmit(e) {
+  let currentKey = e.keyCode;
+  if (currentKey === 13) {
+    form.dispatchEvent(new Event('submit'));
   }
 }
